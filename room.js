@@ -8,6 +8,10 @@ var firebaseConfig = {
       appId: "1:498770365320:web:d2422786c538d6e91b883d"
     };
 
+    firebase.initializeApp(firebaseConfig);
+    user_name=localStorage.getItem("user_name");
+    document.getElementById("user_name").innerHTML="Hi and Welcome "+user_name+"!";
+
     function addRoom() {
       room_name=document.getElementById("room_name").value;
       firebase.database().ref("/").child(room_name).update({purpose
